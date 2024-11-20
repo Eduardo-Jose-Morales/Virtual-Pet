@@ -41,7 +41,9 @@ function App() {
   }
 
   if (Math.random() < 0.1) {
-    const event = 
+    const event = [
+      {emoji: '🍎', message: 'Found a snack!', hunger: -10, energy: 5},
+    ]
   }
 
 
