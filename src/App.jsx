@@ -51,6 +51,7 @@ function App() {
       setPet(event.emoji);
       setMessage(event.message);
       setHunger(prev => Math.max(0, Math.min(100, prev + (event.hunger || 0))));
+      setBoredom(prev => Math.max(0, Math.min(100, prev + (event.boredom || 0))));
       
   }
 
