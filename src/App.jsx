@@ -56,9 +56,16 @@ function App() {
     setTimeout(() => {
       setPet(age() >= 30 ? '🐥' : age() >= 10 ? '🐣' : '🥚');
     }, 1000)  
-  };
+  }
+};
+
+const feed = () => {
+  if (!isAlive()) return;
+  setHunger(prev => Math.max(0, prev - 15));
+  setEnergy(prev => Math.min(100, prev + 5));
+  setBoredom(prev => Math.min(100, prev + 5));
+  setMessage('Yum Yum!');
 }
-  
 
 
   return (
