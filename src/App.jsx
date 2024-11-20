@@ -38,26 +38,27 @@ function App() {
       setPet('🐥')
       setMessage('Your pet has grown!, congratulations!')
     }
-  }
-
-  if (Math.random() < 0.1) {
-    const events = [
-      {emoji: '🍎', message: 'Found a snack!', hunger: -10, energy: 5},
-      {emoji: '🦋', message: 'Chased a butterfly!', boredom: -10, energy: -5},
+    
+    if (Math.random() < 0.1) {
+      const events = [
+        {emoji: '🍎', message: 'Found a snack!', hunger: -10, energy: 5},
+        {emoji: '🦋', message: 'Chased a butterfly!', boredom: -10, energy: -5},
       {emoji: '💤', message: 'Took a quick nap', boredom: 15, energy: 5},
     ];
-
+    
     const event = events[Math.floor(Math.random() * events.length)];
-      setPet(event.emoji);
-      setMessage(event.message);
-      setHunger(prev => Math.max(0, Math.min(100, prev + (event.hunger || 0))));
-      setBoredom(prev => Math.max(0, Math.min(100, prev + (event.boredom || 0))));
-      setEnergy(prev => Math.max(0, Math.min(100, prev + (event.energy || 0)))); 
-     
-      setTimeout(() => {
-        setPet(age() >= 30 ? '🐥' : age() >= 10 ? '🐣' : '🥚');
-      }, 1000)  
-  }
+    setPet(event.emoji);
+    setMessage(event.message);
+    setHunger(prev => Math.max(0, Math.min(100, prev + (event.hunger || 0))));
+    setBoredom(prev => Math.max(0, Math.min(100, prev + (event.boredom || 0))));
+    setEnergy(prev => Math.max(0, Math.min(100, prev + (event.energy || 0)))); 
+    
+    setTimeout(() => {
+      setPet(age() >= 30 ? '🐥' : age() >= 10 ? '🐣' : '🥚');
+    }, 1000)  
+  };
+}
+  
 
 
   return (
