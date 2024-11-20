@@ -48,6 +48,7 @@ function App() {
     ];
 
     const event = events[Math.floor(Math.random() * events.length)];
+      setPet(event.emoji);
       
   }
 
