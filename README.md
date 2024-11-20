@@ -1,3 +1,3 @@
 # Virtual Pet
 
-![My Project Image](./src/assets/picture.jpeg)
+![My Project Image](./src/assets/screenshot.jpeg)
