@@ -49,6 +49,8 @@ function App() {
 
     const event = events[Math.floor(Math.random() * events.length)];
       setPet(event.emoji);
+      setMessage(event.message);
+      setHunger(prev => Math.max(0, Math.min(100, prev + (event.hunger || 0))));
       
   }
 
