@@ -75,6 +75,14 @@ const play = () => {
   setMessage('So fun!');
 }
 
+const sleep = () => {
+  if (!isAlive()) return;
+  setEnergy(prev => Math.min(100, prev + 30));
+  setHunger(prev => Math.min(100, prev + 10));
+  setBoredom(prev => Math.min(100, prev + 15));
+  setMessage('Sweet dreams!');
+}
+
 
   return (
     <div >
