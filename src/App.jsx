@@ -11,8 +11,9 @@ function App() {
   const [message, setMesssage] = createSignal('Take care of your pet!');
 
   createEffect(() => {
-    const interval = setInterval(() => {
 
+    const interval = setInterval(() => {
+      
       if (isAlive) {  
         setHunger(prev => Math.min(100, prev + 1));
         setBoredom(prev => Math.min(100, prev + 1));
@@ -20,11 +21,13 @@ function App() {
         setAge(prev => prev + 1);
         updatePetState();
       }
-    
     }, 2000);
     
     return () => clearInterval(interval);
-  }
+  
+  }, [isAlive])
+    
+
       
   return (
     <>
