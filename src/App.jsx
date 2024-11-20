@@ -43,6 +43,7 @@ function App() {
   if (Math.random() < 0.1) {
     const event = [
       {emoji: '🍎', message: 'Found a snack!', hunger: -10, energy: 5},
+      {emoji: '🦋', message: 'Chased a butterfly!', boredom: -10, energy: -5},
     ]
   }
 
