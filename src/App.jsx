@@ -25,12 +25,11 @@ function App() {
     
     return () => clearInterval(interval);
   
-  }, [isAlive])
-    
-
+  }, [isAlive]);
       
   return (
     <>
+      <h1>hoa</h1>
 
     </>
   )
