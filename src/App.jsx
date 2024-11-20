@@ -1,4 +1,5 @@
-import { createSignal, createEffect } from 'solid-js'
+import { createSignal, createEffect, onCleanup } from 'solid-js'
+
 import './App.css'
 
 function App() {
@@ -6,33 +7,45 @@ function App() {
   const [hunger, setHunger] = createSignal(20);
   const [boredom, setBoredom] = createSignal(20);
   const [energy, setEnergy] = createSignal(100);
-  const [age, setAge] = createSignal(20);
-  const [isAlive, setIsAlive] = useState(true);
-  const [message, setMesssage] = createSignal('Take care of your pet!');
+  const [age, setAge] = createSignal(0);
+  const [isAlive, setIsAlive] = createSignal(true);
+  const [message, setMessage] = createSignal('Take care of your pet!');
 
   createEffect(() => {
-
-    const interval = setInterval(() => {
-      
-      if (isAlive) {  
+    const intervalId = setInterval(() => {
+      if (isAlive()) {
         setHunger(prev => Math.min(100, prev + 1));
         setBoredom(prev => Math.min(100, prev + 1));
         setEnergy(prev => Math.max(0, prev - 1));
-        setAge(prev => prev + 1);
+        setAge(prev => + 1);
         updatePetState();
       }
-    }, 2000);
-    
-    return () => clearInterval(interval);
-  
-  }, [isAlive]);
-      
-  return (
-    <>
-      <h1>hoa</h1>
+    }, 2000)
 
-    </>
+    onCleanup(() => clearInterval(intervalId))
+  });
+
+  const updatePetState = () => {
+    if (hunger() >= 100 || boredom() >= 100 || energy() <= 0) {
+      setIsAlive(false);
+      setPet('👻')
+      setMessage('Your pet has passed away. Please refresh to start over');
+    } else if (age() === 10 && pet() === '🥚') {
+      
+      setPet('🐣')
+      setMessage('Your pet has hatched!')
+    } else if (age() === 30 && pet() === '🐣') {
+      setPet('🐥')
+      setMessage('Your pet has grown!, congratulations!')
+    }
+  }
+
+
+  return (
+    <div >
+      
+    </div>
   )
 }
 
-export default App
+export default App;
