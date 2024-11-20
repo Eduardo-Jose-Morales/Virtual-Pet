@@ -81,6 +81,7 @@ const sleep = () => {
   setHunger(prev => Math.min(100, prev + 10));
   setBoredom(prev => Math.min(100, prev + 15));
   setMessage('Sweet dreams!');
+
 }
 
 
