@@ -52,8 +52,11 @@ function App() {
       setMessage(event.message);
       setHunger(prev => Math.max(0, Math.min(100, prev + (event.hunger || 0))));
       setBoredom(prev => Math.max(0, Math.min(100, prev + (event.boredom || 0))));
-      setEnergy(prev => Math.max(0, Math.min(100, prev + (event.energy || 0))));
-      
+      setEnergy(prev => Math.max(0, Math.min(100, prev + (event.energy || 0)))); 
+     
+      setTimeout(() => {
+        setPet(age() >= 30 ? '🐥' : age() >= 10 ? '🐣' : '🥚');
+      }, 1000)  
   }
 
 
