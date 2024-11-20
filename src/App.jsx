@@ -64,7 +64,15 @@ const feed = () => {
   setHunger(prev => Math.max(0, prev - 15));
   setEnergy(prev => Math.min(100, prev + 5));
   setBoredom(prev => Math.min(100, prev + 5));
-  setMessage('Yum Yum!');
+  setMessage('Yum yum!');
+}
+
+const play = () => {
+  if (!isAlive()) return;
+  setBoredom(prev => Math.max(0, prev - 20));
+  setHunger(prev => Math.min(100, prev + 5));
+  setEnergy(prev => Math.min(100, prev - 15));
+  setMessage('So fun!');
 }
 
 
