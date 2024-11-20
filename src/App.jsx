@@ -10,7 +10,8 @@ function App() {
   const [isAlive, setIsAlive] = useState(true);
   const [message, setMesssage] = createSignal('Take care of your pet!');
 
-
+  createEffect(() => {
+    
 
   return (
     <>
