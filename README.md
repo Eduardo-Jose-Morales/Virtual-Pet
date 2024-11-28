@@ -1,5 +1,5 @@
 
-# [Try the Project Now](https://eduardo-morales-virtual-pet.firebaseapp.com/)
+# <a target="_blank" href="https://eduardo-morales-virtual-pet.firebaseapp.com/">Try the project now</a>
 
 # Virtual Pet
 
