@@ -13,8 +13,30 @@ This is a simple virtual pet game built using Solid.js. The game allows you to t
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
+1. **Clone the repository**:
+        ```bash
    git clone https://github.com/your-username/virtual-pet.git
-   cd virtual-pet```
-   
+   cd virtual-pet
+        ```
+
+2. **Install dependencies**:
+        ```
+    bash
+    npm install
+        ```
+
+3. **Start the develpment server**:
+        ```bash
+    npm run dev
+        ```
+
+
+
+
+## Usage
+
+**Feed**: Decrease hunger, increase energy and boredom.
+
+**Play**: Decrease boredom, increase hunger, and decrease energy.
+
+**Sleep**: Increase energy, increase hunger, and increase boredom.
